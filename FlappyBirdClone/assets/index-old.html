@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flappy Bird Clone</title>
+<link rel="icon" href="assets/icon.ico">
+<style>
+  body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: #70c5ce; }
+  canvas { display: block; }
+  #score { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font: bold 24px Arial; color: white; }
+</style>
+</head>
+<body>
+<canvas id="gameCanvas" width="400" height="600"></canvas>
+<div id="score">0</div>
+
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const scoreDisplay = document.getElementById('score');
+
+// Load images
+const bgImg = new Image();
+bgImg.src = 'assets/flappyworld.png';
+
+const birdImg = new Image();
+birdImg.src = 'assets/flappybird.png';
+
+const pipeImg = new Image();
+pipeImg.src = 'assets/pipes.png';
+
+// Bird
+let bird = { x: 50, y: 300, width: 34, height: 24, gravity: 0.6, lift: -12, velocity: 0 };
+
+// Pipes
+let pipes = [];
+const pipeWidth = 50;
+const pipeGap = 150;
+let frame = 0;
+let score = 0;
+
+// Key press
+document.addEventListener('keydown', () => { bird.velocity = bird.lift; });
+
+// Game loop
+function draw() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  // Draw background
+  ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+
+  // Bird physics
+  bird.velocity += bird.gravity;
+  bird.y += bird.velocity;
+  ctx.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
+
+  // Add pipes
+  if(frame % 90 === 0) {
+    let pipeHeight = Math.floor(Math.random() * (canvas.height - pipeGap - 50)) + 25;
+    pipes.push({x: canvas.width, y: 0, height: pipeHeight});
+    pipes.push({x: canvas.width, y: pipeHeight + pipeGap, height: canvas.height - pipeHeight - pipeGap});
+  }
+
+  // Draw pipes
+  for(let i=0; i<pipes.length; i++){
+    pipes[i].x -= 2;
+    ctx.drawImage(pipeImg, pipes[i].x, pipes[i].y, pipeWidth, pipes[i].height);
+
+    // Collision
+    if(bird.x < pipes[i].x + pipeWidth && bird.x + bird.width > pipes[i].x &&
+       bird.y < pipes[i].y + pipes[i].height && bird.y + bird.height > pipes[i].y){
+         alert('Game Over! Score: ' + score);
+         document.location.reload();
+    }
+  }
