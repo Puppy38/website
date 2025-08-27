@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DTM Website</title>
+  <link rel="icon" type="image/png" href="weblogo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* Base reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Navbar */
+    header {
+      background: #1f2937;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    header img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav ul li a:hover {
+      color: #60a5fa;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #2563eb, #1e40af);
+      color: #fff;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Links grid */
+    .links {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .card a {
+      display: block;
+      font-weight: 600;
+      color: #2563eb;
+    }
+
+    /* Content section */
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    main h2 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      color: #111827;
+    }
+    main p {
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 50px;
+      background: #1f2937;
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">
+      <img src="DTMlogo.png" alt="Dogzteam Logo">
+      Dogzteam Puppy38
+    </div>
+    <nav>
+      <ul>
+        <li><a href="https://puppy38.github.io/newweb">Home</a></li>
+        <li><a href="https://www.github.com/puppy38">Github</a></li>
+        <li><a href="https://www.youtube.com/@ponponi.videos">YouTube</a></li>
+        <li><a href="https://puppy38.github.io/newweb/games">Games</a></li>
+        <li><a href="https://puppy38.github.io/newweb/support">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Puppy38’s Website</h1>
+    <p>Explore projects, games, music, and more</p>
+  </section>
+
+  <!-- Link Cards -->
+  <section class="links">
+    <div class="card"><a href="https://puppy38.github.io/newweb">Home</a></div>
+    <div class="card"><a href="https://www.github.com/puppy38">Github</a></div>
+    <div class="card"><a href="https://www.youtube.com/@ponponi.videos">YouTube</a></div>
+    <div class="card"><a href="https://puppy38.github.io/newweb/games">Games</a></div>
+    <div class="card"><a href="https://scratch.mit.edu/users/Tolisxris">Scratch</a></div>
+    <div class="card"><a href="https://puppy38.github.io/Themes">Themes</a></div>
+    <div class="card"><a href="https://puppy38.github.io/puppy38">Puppy38</a></div>
+    <div class="card"><a href="https://puppy38.github.io/newweb/support">Contact</a></div>
+    <div class="card"><a href="https://puppy38.github.io/newweb/djspace-music">Music</a></div>
+    <div class="card"><a href="https://puppy38.github.io/newweb/pictureblog">PictureBlog</a></div>
+    <div class="card"><a href="https://puppy38.github.io/newweb/books">Books</a></div>
+    <div class="card"><a href="https://puppy38.github.io/AudioPlayer">Audio Player</a></div>
+    <div class="card"><a href="https://discord.gg/Y8CGndx7ct">Discord Server</a></div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <h2>Trending Now On Puppy38 New Web</h2>
+    <p>Content will be added soon. Stay tuned for updates!</p>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Dogzteam Puppy38 New Website</p>
+  </footer>
+
+</body>
+</html>
